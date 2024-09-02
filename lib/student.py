@@ -3,6 +3,11 @@
 from user import User
 
 class Student(User):
+    def __init__(self, first_name, last_name):
+        super().__init__(first_name, last_name)
+        self.knowledge=list()
     
-    def learn(self):
-        pass
+    def learn(self, keyed_in_string):
+        self.string=keyed_in_string
+        if isinstance(self.string, str):
+            self.knowledge.append(self.string)
